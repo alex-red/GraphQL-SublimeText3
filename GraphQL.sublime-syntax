@@ -79,6 +79,12 @@ contexts:
       scope: keyword.operator.assignment.graphql
 
     # Type Definitions
+    - match: '\bquery\b'
+      scope: storage.type.query.graphql
+
+    - match: '\bmutation\b'
+      scope: storage.type.mutation.graphql
+
     - match: '\btype\b'
       scope: storage.type.type.graphql
 
@@ -130,6 +136,7 @@ contexts:
 
     - match: '(?<=on )\w+\b'
       scope: meta.type.fragment.on meta.type.type
+      push: enums
 
     - match: '(?<=scalar )\w+\b'
       scope: meta.type.scalar
